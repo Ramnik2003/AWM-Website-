@@ -16,7 +16,7 @@
             '<h4>Navigate</h4>' +
             '<ul>' +
               '<li><a href="index.html">Home</a></li>' +
-              '<li><a href="about.html">About</a></li>' +
+              '<li><a href="/AWM-Website-/"">About</a></li>' +
               '<li><a href="team.html">Team</a></li>' +
               '<li><a href="events.html">Events</a></li>' +
               '<li><a href="mentorship.html">Mentorship</a></li>' +
