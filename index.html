@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AWM @ UBC</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* home page only */
 
     .hero {
       min-height: calc(100vh - var(--nav-height));
@@ -23,6 +22,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero::before {
       content: '';
       position: absolute; inset: 0;
@@ -30,44 +30,73 @@
         radial-gradient(ellipse at 30% 50%, rgba(205,183,233,.18) 0%, transparent 60%),
         radial-gradient(ellipse at 70% 20%, rgba(217,143,179,.12) 0%, transparent 50%);
     }
+
     .hero-deco {
       position: absolute;
       pointer-events: none;
       user-select: none;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: serif;
       font-weight: 700;
       font-size: clamp(100px, 20vw, 220px);
       color: rgba(255,255,255,.04);
       line-height: 1;
     }
-    .hero-deco.left         { left: -2%;  bottom: 10%; }
-    .hero-deco.right        { right: -2%; top: 15%;    }
-    .hero-deco.top-left     { left: -2%;  top: 3%;     }
-    .hero-deco.bottom-right { right: -2%; bottom: 3%;  }
-    .hero-deco.mid-left     { left: 15%;  top: 25%;    }
-    .hero-deco.centre-top   { left: 45%;  top: -2%;    }
-    .hero-deco.mid-right    { right: 15%; bottom: 10%; }
 
-    .hero-content { position: relative; max-width: 780px; }
+    /* Reference:Used Claude for gradient effect and mathematics symbols in the background  */
+    .hero-deco.left{ left: -2%;  bottom: 10% }
+    .hero-deco.right { right: -2%; top: 15%;}
+    .hero-deco.top-left{ left: -2%;  top: 3%; }
+    .hero-deco.bottom-right { right: -2%; bottom: 3%;}
+    .hero-deco.mid-left{ left: 15%;  top: 25%; }
+    .hero-deco.centre-top{ left: 45%;  top: -2%; }
+    .hero-deco.mid-right{ right: 15%; top: 1%; }
+
+    .hero-content { 
+        position: relative; 
+        max-width: 1000px; 
+    }
+
+    .hero h2 {
+        color: var(--warm-white);
+        font-style: normal;
+        margin-bottom: 5px;
+    }
     .hero h1 {
-      color: #fff;
+      color:  var(--soft-lavender);;
       font-size: clamp(2.4rem, 6vw, 4.2rem);
       font-style: italic;
       margin-bottom: 20px;
+      margin-top: 10px;
     }
-    .hero h1 em { font-style: normal; color: var(--soft-lavender); }
+    
     .hero p {
       color: rgba(255,255,255,.78);
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       max-width: 520px;
       margin: 0 auto 36px;
     }
-    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-    .mission-strip { padding: 90px 5%; background: var(--warm-white); }
-    .mission-inner { max-width: 1100px; margin: 0 auto; }
+    .hero-btns { 
+        display: flex; 
+        gap: 14px; 
+        justify-content: center; 
+        flex-wrap: wrap; }
 
-    .purpose-list { list-style: none; margin-top: 8px; }
+    .mission-strip { 
+        padding: 90px 5%; 
+        background: var(--warm-white); 
+    
+    }
+    .mission-inner { 
+        max-width: 1100px;
+         margin: 0 auto; 
+        }
+
+    .purpose-list { 
+        list-style: none; 
+        margin-top: 8px; 
+    }
+
     .purpose-list li {
       display: flex;
       align-items: flex-start;
@@ -78,7 +107,10 @@
       color: var(--charcoal);
       line-height: 1.6;
     }
-    .purpose-list li:last-child { border-bottom: none; }
+    .purpose-list li:last-child {
+         border-bottom: none; 
+    }
+
     .purpose-list .dot {
       width: 8px; height: 8px;
       border-radius: 50%;
@@ -93,36 +125,40 @@
 <div id="nav-placeholder"></div>
 
 <section class="hero">
-  <div class="hero-deco left"         aria-hidden="true">∑</div>
-  <div class="hero-deco right"        aria-hidden="true">π</div>
-  <div class="hero-deco top-left"     aria-hidden="true">≅</div>
-  <div class="hero-deco bottom-right" aria-hidden="true">∉</div>
-  <div class="hero-deco mid-left"     aria-hidden="true">よ</div>
-  <div class="hero-deco centre-top"   aria-hidden="true">∏</div>
-  <div class="hero-deco mid-right"    aria-hidden="true">∰</div>
+    <div class="hero-deco left">∑</div>
+    <div class="hero-deco right">π</div>
+    <div class="hero-deco top-left">∉</div>
+    <div class="hero-deco bottom-right">∰</div>
+    <div class="hero-deco mid-left">よ</div>
+    <div class="hero-deco centre-top">∏</div>
+    <div class="hero-deco mid-right">≅</div>
 
-  <div class="hero-content">
-    <h1>
-      Association for<br>
-      <em>Women in Mathematics</em><br>
-      at UBC
-    </h1>
-    <p>Building a supportive community for women in mathematics at the University of British Columbia.</p>
-    <div class="hero-btns">
-      <a href="membership.html" class="btn btn-primary">Join Us</a>
-      <a href="about.html"      class="btn btn-ghost">Learn More</a>
+    <div class="hero-content">
+        <div class="fade-in-up">
+            <h2>Association for</h2>
+            <h1>Women in Mathematics</h1>
+            <h2>at UBC</h2>
+            <p class="fade-in-up delay-1">A supportive community for women in mathematics at the University of British Columbia.</p>
+            <div class="hero-btns fade-in-up delay-2">
+              <a href="membership.html" class="btn btn-primary">Join Us</a>
+              <a href="about.html"      class="btn btn-ghost">Learn More</a>
+            </div>
+        
+        </div>
     </div>
-  </div>
+    
+    
 </section>
 
 <section class="mission-strip">
   <div class="mission-inner">
     <div class="two-col">
 
+<!-- Reference: Used Claude to add animation to the columns - Mission and Purpose -->
       <div class="highlight-box reveal delay-1" style="margin-top: 0;">
         <h2 style="margin-bottom: 10px;">Our Mission</h2>
         <div class="divider divider-left"></div>
-        <p>We exist to foster community — so that every woman who loves mathematics at UBC has the support, connections, and opportunities she deserves.</p>
+        <p>Our goal is to make a community where every woman who loves mathematics at UBC has the support, connections and ooportunities that she deserves. </p>
         <a href="about.html" class="btn btn-outline" style="margin-top: 28px;">Learn More</a>
       </div>
 
@@ -140,68 +176,11 @@
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-grid">
-
-    <div class="footer-brand">
-      <div class="logo-text">AWM @ UBC</div>
-      <div class="logo-text para">
-        <p>The Association for Women in Mathematics at UBC fosters community, mentorship, and opportunity for women and gender minorities in mathematics.</p>
-      </div>
-    </div>
-
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="mentorship.html">Mentorship</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>More</h4>
-      <ul>
-        <li><a href="membership.html">Get Involved</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="partners.html">Partners</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <div class="social-links">
-        <a href="#" title="Instagram">Instagram</a>
-        <a href="mailto:awm@ubc.ca" title="Email">Email</a>
-      </div>
-    </div>
-
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Association for Women in Mathematics at UBC. All rights reserved.</p>
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script src="nav.js"></script>
-<script>
-      //code from AI - Used Claude - prompt:"Help me add "Airy" feature to my website"
-  (function() {
-    var els = document.querySelectorAll('.reveal');
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    els.forEach(function(el) { observer.observe(el); });
-  })();
-</script>
+<script src="footer.js"></script>
+<script src="animations.js"></script>
 
 </body>
 </html>
