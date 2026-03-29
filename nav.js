@@ -14,12 +14,7 @@
        https://ramnik2003.github.io/AWM-Website-/about.html  → base = /AWM-Website-/
        https://awmubc.com/about.html                          → base = /
   */
-  var pathParts = location.pathname.split('/');
-  // Remove the filename (last segment, e.g. "about.html" or "")
-  pathParts.pop();
-  // Re-join and add trailing slash
-  var basePath = pathParts.join('/') + '/';
-  // If we end up with just "/" that's fine — links will be /about.html etc.
+  var basePath = '/AWM-UBC/';
 
   /* ── 2. Current page filename for active-link highlighting ──────────────*/
   var currentPage = location.pathname.split('/').pop() || 'index.html';
