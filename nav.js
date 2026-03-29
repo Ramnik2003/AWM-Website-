@@ -20,7 +20,7 @@
        These four sit directly in the nav bar at all screen sizes ≥ 861 px. */
     var primaryItems = [
       { href: 'index.html',  label: 'Home'   },
-      { href: 'about.html',  label: 'About'  },
+      { href="/AWM-Website-/about.html",  label: 'About'  },
       { href: 'events.html', label: 'Events' },
       { href: 'team.html',   label: 'Team'   },
     ];
